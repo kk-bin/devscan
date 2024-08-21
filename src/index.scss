@@ -1,0 +1,53 @@
+.flex-box {
+    display: flex;
+}
+
+.flex-inline {
+    display: inline-flex;
+}
+
+.flex-box.align-center {
+    align-items: center;
+}
+
+.flex-box.flex-dir-col {
+    flex-direction: column;
+}
+
+.flex-box.justify-center {
+    justify-content: center;
+}
+
+.flex-box.space-between {
+    justify-content: space-between;
+}
+
+.flex-box.space-around {
+    justify-content: space-around;
+}
+
+.flex-box.space-evenly {
+    justify-content: space-evenly;
+}
+
+.flex-box.flex-wrap {
+    flex-wrap: wrap;
+}
+
+input::placeholder {
+    color: var(---60, rgba(255, 255, 255, 0.60));
+    font-size: 16px;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+
+@media screen and (max-width: 1230px) {
+    .container {
+        width: 90%;
+    }
+}

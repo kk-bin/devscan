@@ -1,0 +1,13 @@
+@import "~src/global.scss";
+
+.blockNumberRange {
+  @include hcflex;
+}
+
+.txHorizontal {
+  @include hflex;
+
+  .main {
+    margin-left: 10px;
+  }
+}

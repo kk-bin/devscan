@@ -1,0 +1,160 @@
+@mixin text-regular {
+  font-weight: 400;
+  font-feature-settings: normal;
+  font-variant: normal;
+}
+
+@mixin text-Bold {
+  @include text-regular;
+  font-weight: bold;
+}
+
+@mixin text-Light {
+  @include text-regular;
+  font-weight: lighter;
+}
+
+@mixin text-Medium {
+  @include text-regular;
+  font-weight: 500;
+}
+
+@mixin btn-bg {
+  background-image: linear-gradient(10deg, var(--main-pink), var(--main-blue));
+}
+
+@mixin btn-bg-reverse {
+  background-image: linear-gradient(230deg, var(--main-pink), var(--main-blue));
+}
+
+@mixin btn-border {
+  border: 1px solid var(--main-blue);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+@mixin btn-border-reverse {
+  border: 1px solid transparent;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-image: linear-gradient(0deg, var(--sub-bg), var(--sub-bg)), radial-gradient(circle at right top, var(--main-pink), var(--main-blue));
+}
+
+@mixin transition {
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+@mixin textEllipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@mixin pressBtn {
+  cursor: pointer;
+  user-select: none;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+@mixin hflex {
+  display: flex;
+  flex-direction: row;
+
+  .main {
+    flex: 1;
+  }
+}
+
+@mixin hcflex {
+  @include hflex;
+  align-items: center;
+}
+
+@mixin hwflex {
+  @include hflex;
+  flex-wrap: wrap;
+}
+
+@mixin hbflex {
+  @include hflex;
+  justify-content: space-between;
+}
+
+@mixin hcbflex {
+  @include hflex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin hvcflex {
+  @include hflex;
+  justify-content: center;
+}
+
+@mixin vContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .main {
+    flex: 1;
+  }
+}
+
+@mixin vPage {
+  @include vContainer();
+  height: 100vh;
+
+  .main {
+    overflow-y: auto;
+  }
+}
+
+@mixin required {
+  &::before {
+    content: "*";
+    color: #ee0000;
+  }
+}
+
+@mixin noWrap {
+  white-space: nowrap;
+}
+
+@mixin overhidden {
+  overflow: hidden;
+} 
+
+@mixin ml5 {
+  margin-left: 5px;
+}
+
+@mixin iconAndTitle {
+  @include hcflex;
+  svg, img {
+    width: 20px;
+    margin-right: 5px;
+  }
+  span {
+    font-size: inherit;
+  }
+}
+
+@mixin iconWrap {
+  display: block;
+  padding: 2px;
+  svg {
+    display: block;
+  }
+}
+
+$navChangePoint: 959px;
+$inputBorderRadius: 10px;
+$inputBorderColor: var(--border-normal-color);
+$ant-prefix: 'ant';
+$iconfont-css-prefix: 'anticon';

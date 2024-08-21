@@ -1,0 +1,16 @@
+@import "~src/global.scss";
+
+.wrap {
+    @include iconAndTitle;
+    svg, img {
+        width: 16px;
+        height: 16px;
+    }
+
+    span {
+        color: var(--text);
+        font-size: inherit;
+        font-style: normal;
+        font-weight: 450;
+    }
+}

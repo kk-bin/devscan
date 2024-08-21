@@ -1,0 +1,354 @@
+@import "~src/global.scss";
+
+.popover {
+    position: relative;
+}
+
+.container {
+    width: 100%;
+    border-bottom: 1px solid var(--border-normal-color);
+}
+
+.header {
+    height: 50px;
+}
+
+.left {
+    flex: 0 0 auto;
+    cursor: pointer;
+}
+
+.logo {
+    font-size: 32px;
+}
+.name {
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--text);
+    font-weight: bold;
+}
+
+.addressWrap {
+    color: var(--text);
+    padding: 5px 10px;
+    @include pressBtn;
+    @include btn-border;
+}
+
+.addressWrap {
+    margin-left: 10px;
+
+    .balance {
+        border-right: 1px solid var(--border-normal-color);
+        padding-right: 10px;
+    }
+
+    .address {
+        padding-left: 10px;
+        cursor: pointer;
+        user-select: none;
+        @include pressBtn;
+        @include hcflex;
+    }
+    .balance + .address {
+        border-radius: 5px 30px 30px 5px;
+    }
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+}
+
+.status {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #27AE60;
+}
+
+.menu {
+    margin: 0 auto;
+    display: inline-flex;
+}
+
+.menuItem {
+    display: inline-block;
+}
+
+.right {
+    flex: 1;
+    font-size: 14px;
+}
+
+.address {
+    // margin-left: 10px;
+    font-weight: bold;
+    color: var(--text);
+}
+
+.popupProfile {
+    border-radius: 26px;
+    background-color: var(--sub-bg);
+}
+
+.popupAvatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.popupName {
+    margin-left: 10px;
+    color: #000001;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: bold;
+}
+
+.asset {
+    margin-top: 11px;
+    padding: 10px;
+    border-radius: 16px;
+    color: #000001;
+    font-weight: bold;
+    box-shadow: 0px 10px 20px 0px #0000001A;
+}
+
+.ethIcon {
+    width: 36px;
+    height: 36px;
+}
+
+.ethAsset {
+    margin-left: 10px;
+}
+
+.profileItem {
+    margin-top: 10px;
+    cursor: pointer;
+
+    img {
+        width: 20px;
+        height: 20px;
+    }
+
+    p {
+        margin-left: 10px;
+        font-size: 14px;
+        color: #000001;
+        font-weight: bold;
+    }
+}
+
+.iconWrap {
+    padding: 13px;
+    line-height: 1;
+    
+    svg {
+        display: block;
+    }
+}
+
+.hasMessage.iconWrap {
+    position: relative;
+    cursor: pointer;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 6px;
+        height: 6px;
+        background-color: #F6465D;
+        border-radius: 50%;
+    }
+}   
+
+.messages {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.menuWrap {
+    width: auto;
+    flex: 1;
+    overflow-x: auto;
+    display: flex;
+    justify-content: center;
+    padding: 0 10px;
+}
+
+.menuItem {
+    margin-right: 30px;
+}
+
+.tokenList {
+    color: var(--text-normal-color);
+    border-radius: 8px;
+    max-width: 150px;
+
+    .title {
+        font-weight: bold;
+    }
+    .item {
+        padding: 0 10px;
+        .label {
+            color: var(--label-normal-color);
+        }
+    }
+    .item + .item {
+        border-top: 1px solid var(--border-normal-color);
+    }
+
+    .token {
+        padding: 5px 10px;
+    }
+
+    .credit {
+        padding: 5px 10px;
+        border-top: 1px solid var(--border-normal-color);
+    }
+}
+
+.walletWrap {
+    color: var(--text-normal-color);
+    background-color: var(--sub-bg);
+    border-radius: $inputBorderRadius;
+    border: 1px solid var(--border-normal-color);
+
+    .walletDetail {
+        padding: 10px;
+        background-color: var(--sub-bg);
+        border-radius: $inputBorderRadius $inputBorderRadius 0 0;
+
+        .connect {
+            font-size: 12px;
+        }
+
+        .btnWrap {
+            margin-left: 20px;
+            padding: 0;
+            border: 1px solid var(--border-normal-color);
+            color: var(--text-active-color);
+            background-color: var(--sub-bg);
+            @include pressBtn;
+
+            .btn {
+                padding: 0 5px;
+            }
+        }
+    }
+
+    .transactions {
+        padding: 0 10px 10px;
+    }
+}
+
+.changeNetworkBtn {
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 0 5px;
+    @include btn-border-reverse;
+    @include pressBtn;
+}
+
+.menuIconWrap {
+    @include pressBtn;
+
+    :global {
+        .#{$ant-prefix}-dropdown-open {
+            background-color: var(--sub-bg);
+        }
+    }
+}
+
+.menuActive {
+    color: var(--text-active-color) !important;
+}
+.txStatusDescIcon {
+    font-size: 12px;
+    margin-left: 6px;
+}
+.txStatusDesc {
+    font-weight: normal;
+    font-size: 12px;
+    color: var(--text-normal-color);
+    background-color: var(--sub-bg);
+    opacity: 0.6;
+    padding: 3px;
+    border-radius: 4px;
+    width: 200px;
+}
+.transactions {
+    .txHead {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 20px;
+        padding: 10px 0 5px 0;
+        border-top: 1px solid var(--border-normal-color);
+    }
+    .txContent {
+        max-height: 115px;
+        overflow-y: auto;
+    }
+    .txRecord {
+        line-height: 23px;
+        height: 23px;
+    }
+    .txTitle {
+        font-size: 12px;
+        line-height: 20px;
+        color: #FF00DB;
+    }
+}
+
+.txStatucIcon {
+    width: 16px;
+    height: 16px;
+}
+
+.txLoading {
+    background-image: url('~src/asset/common/loading.svg');
+    background-size: contain;
+}
+.spin {
+    animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.txSuccess {
+    background-image: url('~src/asset/common/confirmSuccess.svg');
+    background-size: contain;
+}
+
+.txFailed {
+    background-image: url('~src/asset/common/confirmFailed.svg');
+    background-size: contain;
+}
+
+
+.engine {
+    padding: 0 5px;
+}
+
+.walletMenu {
+    :global {
+        .#{$ant-prefix}-dropdown-menu {
+            margin-top: 10px;
+        }
+    }
+    .walletWrap {
+        margin-top: 10px;
+    }
+}

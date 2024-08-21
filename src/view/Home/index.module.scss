@@ -1,0 +1,22 @@
+@import "~src/global.scss";
+
+.wrap {
+    margin: 0;
+}
+
+img {
+    width: 60px;
+}
+
+.section {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--third-bg);
+}
+
+
+.sitepageheader {
+    margin-top: 20px;
+    border: 1px solid var(--sub-bg);
+}

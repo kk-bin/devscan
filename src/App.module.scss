@@ -1,0 +1,147 @@
+@import "./variable.css";
+@import "./global.scss";
+
+.vContainer {
+
+  :global {
+
+    [hidden],
+    template {
+        display: none
+    }
+
+    a {
+        text-decoration: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    a:active,
+    a:hover,
+    a:visited {
+        text-decoration: none;
+        outline: 0
+    }
+
+    abbr[title] {
+        border-bottom: 1px dotted
+    }
+
+    b,
+    strong {
+        font-weight: 700
+    }
+
+    dfn {
+        font-style: italic
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        margin: 0;
+        -webkit-appearance: none;
+    }
+
+    *::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* metamask  mask mask z-index */
+    .svelte-rntogh {
+        z-index: 9999;
+    }
+
+    .btn-isLoading {
+        margin-right: 10px;
+    }
+
+    .mr10 {
+        margin-right: 10px;
+    }
+    .ml10 {
+        margin-left: 10px;
+    }
+    .mt10 {
+        margin-top: 10px;
+    }
+    .mb10 {
+        margin-bottom: 10px;
+    }
+
+    .textEllipsis {
+        @include textEllipsis;
+    }
+
+    .lrTextEllipsis {
+        display: flex;
+        align-items: center;
+        span {
+            @include textEllipsis;
+            margin-right: 5px;
+            flex: 1;
+        }
+    }
+
+    .vPage {
+        @include vPage;
+    }
+
+    .ml5 {
+        @include ml5;
+    }
+
+    .overhidden {
+        @include overhidden;
+    }
+
+    .noWrap {
+        @include noWrap;
+    }
+
+    .wrap {
+        word-break: break-all;
+        word-wrap: break-word;
+    }
+
+    .iconAndTitle {
+        @include iconAndTitle;
+    }
+
+    pre {
+        background-color: var(--third-bg);
+        border-radius: 3px;
+        border: 1px solid var(--sub-bg);
+        padding: 5px;
+    }
+
+    .pre {
+        font-size: 1em;
+        font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    }
+
+    .gap {
+        row-gap: 10px;
+        column-gap: 30px;
+    }
+
+    .myTable {
+        font-size: 12px;
+        
+        border-right: 1px solid var(--border-normal-color);
+        border-bottom: 1px solid var(--border-normal-color);
+        
+        td, th {
+            padding: 10px;
+            border-top: 1px solid var(--border-normal-color);
+            border-left: 1px solid var(--border-normal-color);
+        }
+    }
+  }
+}
+
+.baseWrap {
+  padding: 15px;
+}

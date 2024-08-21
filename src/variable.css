@@ -1,0 +1,19 @@
+:root {
+    --r: 255;
+    --g: 255;
+    --b: 255;
+    --main-bg: rgb(var(--r),var(--g),var(--b));
+    --sub-bg: #eee;
+    --third-bg: #ddd;
+    --hover-bg: rgba(0,0,0,0.1);
+    --main-pink: #FECF0D;
+    --main-blue: #FECF0D;
+    --text: #555;
+    --text-active-color: #FECF0D;
+    --text-normal-color: rgba(0, 0, 0, 0.8);
+    --label-normal-color: rgba(0, 0, 0, 0.4);
+    --main-disable: #aaa;
+    --main-warn: #FF00DB;
+    --border-normal-color: #FECF0D;
+    --contentHeight: calc(100vh - 80px - 186px);
+}

@@ -1,0 +1,20 @@
+@import "~src/global.scss";
+
+.wrap {
+    img {
+        width: 16px;
+        height: 16px;
+        margin-left: 5px;
+    }
+
+    span {
+        color: inherit;
+        font-size: inherit;
+        font-style: normal;
+        font-weight: 450;
+    }
+
+    .valid {
+        font-weight: 400;
+    }
+}

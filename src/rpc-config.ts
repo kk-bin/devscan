@@ -1,0 +1,77 @@
+export const CHAIN_MAP = {
+    Ethereum: 1,
+    Sepolia: 11155111,
+    BSC: 56,
+    BSC_TEST: 97,
+    POLYGON: 137,
+    POLYGON_TEST: 80001,
+    FANTOM: 250,
+    FANTOM_TEST: 4002,
+    AVALANCHE: 43114,
+    // Arbitrum_RINKEBY: 421611,
+    Arbitrum_One: 42161,
+    Arbitrum_Sepolia: 421614,
+    Geth_DEV: 1337,
+};
+
+export const CHAIN_NAME = {
+    [CHAIN_MAP.Ethereum]: 'Ethereum Mainnet',
+    [CHAIN_MAP.Sepolia]: 'Sepolia',
+    [CHAIN_MAP.BSC]: 'Binance Smart Chain Mainnet',
+    [CHAIN_MAP.BSC_TEST]: 'Binance Smart Chain Testnet',
+    [CHAIN_MAP.POLYGON]: 'Polygon Mainnet',
+    [CHAIN_MAP.POLYGON_TEST]: 'Mumbai',
+    [CHAIN_MAP.FANTOM]: 'Fantom Opera',
+    [CHAIN_MAP.FANTOM_TEST]: 'Fantom Testnet',
+    [CHAIN_MAP.AVALANCHE]: 'Avalanche C-Chain',
+    // [CHAIN_MAP.Arbitrum_RINKEBY]: 'Arbitrum Rinkeby',
+    [CHAIN_MAP.Arbitrum_One]: 'Arbitrum One',
+    [CHAIN_MAP.Arbitrum_Sepolia]: 'Arbitrum Sepolia',
+    [CHAIN_MAP.Geth_DEV]: 'Geth_DEV',
+}
+
+export const CHAIN_CURRENCY = {
+    [CHAIN_MAP.Ethereum]: 'ETH',
+    [CHAIN_MAP.Sepolia]: 'ETH',
+    [CHAIN_MAP.BSC]: 'BNB',
+    [CHAIN_MAP.BSC_TEST]: 'tBNB',
+    [CHAIN_MAP.POLYGON]: 'MATIC',
+    [CHAIN_MAP.POLYGON_TEST]: 'MATIC',
+    [CHAIN_MAP.FANTOM]: 'FTM',
+    [CHAIN_MAP.FANTOM_TEST]: 'FTM',
+    [CHAIN_MAP.AVALANCHE]: 'AVAX',
+    // [CHAIN_MAP.Arbitrum_RINKEBY]: 'ETH',
+    [CHAIN_MAP.Arbitrum_One]: 'ETH',
+    [CHAIN_MAP.Arbitrum_Sepolia]: 'ETH',
+    [CHAIN_MAP.Geth_DEV]: 'ETH',
+}
+
+export const CHAIN_RPC = {
+    [CHAIN_MAP.Ethereum]: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+    [CHAIN_MAP.Sepolia]: 'https://rpc.sepolia.ethpandaops.io',
+    [CHAIN_MAP.BSC]: 'https://bsc-dataseed1.binance.org',
+    [CHAIN_MAP.BSC_TEST]: 'https://data-seed-prebsc-1-s1.binance.org:8545',
+    [CHAIN_MAP.POLYGON]: 'https://polygon-rpc.com',
+    [CHAIN_MAP.POLYGON_TEST]: 'https://matic-mumbai.chainstacklabs.com',
+    [CHAIN_MAP.FANTOM]: 'https://endpoints.omniatech.io/v1/fantom/mainnet/public',
+    [CHAIN_MAP.FANTOM_TEST]: 'https://rpc.testnet.fantom.network',
+    [CHAIN_MAP.AVALANCHE]: 'https://endpoints.omniatech.io/v1/avax/mainnet/public',
+    // [CHAIN_MAP.Arbitrum_RINKEBY]: 'https://rinkeby.arbitrum.io/rpc',
+    [CHAIN_MAP.Arbitrum_One]: 'https://arb1.arbitrum.io/rpc',
+    [CHAIN_MAP.Arbitrum_Sepolia]: 'https://sepolia-rollup.arbitrum.io/rpc',
+    [CHAIN_MAP.Geth_DEV]: 'http://3.236.202.22:8545',
+}
+
+export const Explorer_API = {
+    [CHAIN_MAP.Ethereum]: 'https://api.opensea.io/api/v1/assets',
+    [CHAIN_MAP.Sepolia]: 'https://sepolia.etherscan.io',
+    [CHAIN_MAP.BSC]: "https://api.bscscan.com/api",
+    [CHAIN_MAP.BSC_TEST]: 'https://api-testnet.bscscan.com/api',
+    [CHAIN_MAP.POLYGON]: 'https://api.polygonscan.com/api',
+    [CHAIN_MAP.POLYGON_TEST]: "https://api-testnet.polygonscan.com/api",
+    [CHAIN_MAP.FANTOM]: 'https://api.ftmscan.com/api',
+    [CHAIN_MAP.FANTOM_TEST]: 'https://api-testnet.ftmscan.com/api',
+    [CHAIN_MAP.AVALANCHE]: 'https://api.snowtrace.io/api',
+    [CHAIN_MAP.Arbitrum_One]: 'https://arbiscan.io',
+    [CHAIN_MAP.Arbitrum_Sepolia]: 'https://sepolia.arbiscan.io',
+}
