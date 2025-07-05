@@ -10,7 +10,6 @@ import {
 import { ethers } from "ethers";
 import {
     createContractWithProvider,
-    getSaveWallet,
     showWallet,
     formatUnitsUtil,
     parseUnitsUtil,
@@ -20,9 +19,10 @@ import {
 import _ from 'lodash'
 import { BigNumber0, ERC20ABI, OPERATE_RESULT, SIGNATURE_PREF, USER_REJECTED, address0 } from "src/constants";
 import { parseEther } from "ethers/lib/utils";
-import { createOnBoard } from "src/utils/wallet";
+import { createOnBoard, getSaveWallet } from "src/utils/wallet";
 import { StoreData, TransactionRecord } from "src/types";
 import { Explorer_API } from "src/rpc-config";
+import { OnboardAPI } from "@web3-onboard/core";
 
 export async function queryTokenAmount(provider, token, walletAddress) {
     if (!provider || !walletAddress) return;
@@ -51,7 +51,7 @@ export default class EvmStore {
     
     walletAddress = "";
     provider: ethers.providers.Web3Provider = null as any;
-    onboard = null as unknown as any;
+    onboard = null as unknown as OnboardAPI;
 
     balance = "0";
 
@@ -135,10 +135,11 @@ export default class EvmStore {
 
     @action.bound
     async handleConnectWallet() {
-        if (!this.onboard || this.walletAddress) return;
+        if (/* !this.onboard ||  */this.walletAddress) return;
         try {
             const wallet = getSaveWallet();
             let ret;
+            console.log('connecting wallet', wallet)
             if (wallet) {
                 ret = await this.onboard.connectWallet({ autoSelect: wallet });
             } else {
@@ -169,6 +170,15 @@ export default class EvmStore {
             if (provider) {
                 const _provider = new ethers.providers.Web3Provider(provider);
                 this.provider = _provider;
+            }
+        });
+    }
+
+    @action.bound
+    initProvider(provider?: ethers.providers.Web3Provider) {
+        runInAction(() => {
+            if (provider) {
+                this.provider = provider;
             }
         });
     }

@@ -1,10 +1,11 @@
 .warp {
-    width: 100%;
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
     
-
     .footerInner {
         margin: 0 auto;
-        background: #0E0E0E;
+        background: #eee;
 
         .footerMiddle {
             max-width: 1248px;
@@ -25,6 +26,21 @@
                 
                 img {
                     width: 32px;
+                }
+            }
+
+            :global {
+                .ant-spin-nested-loading {
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+                    flex-direction: row-reverse;
+                }
+                .ant-spin-nested-loading > div > .ant-spin {
+                    position: relative;
+                    display: inline-block;
+                    width: 16px;
+                    height: 16px;
                 }
             }
         }

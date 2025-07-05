@@ -18,6 +18,7 @@ export const WETH_ABI: string[];
 export const PAIR_ABI: string[];
 export const FACTORY_ABI: string[];
 export const ROUTER02_ABI: string[];
+export const UNIVERSAL_ROUTER_ABI: string[];
 export const networksParams: {
     "1": {
         name: string;

@@ -22,4 +22,5 @@ export interface TransactionRecord {
 
 export interface StoreData {
   abis: { [address: string]: string }
+  abiOptions?: { [name: string]: string }
 }

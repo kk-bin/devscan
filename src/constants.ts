@@ -94,4 +94,29 @@ export const ERC20ABI = [
 export const formItemLayout = {
     labelCol: { span: 7 },
     wrapperCol: { span: 17 },
-  };
+};
+
+export const formItemLayoutWithOutLabel = {
+  wrapperCol: {
+    span: 17,
+    offset: 7
+  },
+};
+
+export const networkId = "1";
+export const networksParams = {
+  '421613': {
+    chainId: '0x'+ (421613).toString(16),
+    rpcUrls: ['https://endpoints.omniatech.io/v1/arbitrum/goerli/public', 'https://arbitrum-goerli.publicnode.com'],
+    chainName: 'Arbitrum Goerli',
+    nativeCurrency: { name: 'AGOR', decimals: 18, symbol: 'AGOR' },
+    blockExplorerUrls: ['https://goerli-rollup-explorer.arbitrum.io'],
+  },
+  '42161': {
+    chainId: '0x'+ (42161).toString(16),
+    rpcUrls: ['https://arb1.arbitrum.io/rpc', 'https://1rpc.io/arb'],
+    chainName: 'Arbitrum One',
+    nativeCurrency: { name: 'ETH', decimals: 18, symbol: 'ETH' },
+    blockExplorerUrls: ['https://arbiscan.io'],
+  }
+}

@@ -7,7 +7,7 @@
 
     [hidden],
     template {
-        display: none
+        display: none;
     }
 
     a {
@@ -138,6 +138,11 @@
             border-top: 1px solid var(--border-normal-color);
             border-left: 1px solid var(--border-normal-color);
         }
+    }
+
+    .ant-input[disabled] {
+        color: rgba(0, 0, 0, 0.5);
+        cursor: text;
     }
   }
 }

@@ -145,6 +145,47 @@ const ROUTER02_ABI = [
   "function swapTokensForExactTokens(uint256 amountOut, uint256 amountInMax, address[] path, address to, uint256 deadline) returns (uint256[] amounts)"
 ]
 
+const UNIVERSAL_ROUTER_ABI = [
+  "constructor(tuple(address permit2, address weth9, address seaportV1_5, address seaportV1_4, address openseaConduit, address nftxZap, address x2y2, address foundation, address sudoswap, address elementMarket, address nft20Zap, address cryptopunks, address looksRareV2, address routerRewardsDistributor, address looksRareRewardsDistributor, address looksRareToken, address v2Factory, address v3Factory, bytes32 pairInitCodeHash, bytes32 poolInitCodeHash) params)",
+  "error BalanceTooLow()",
+  "error BuyPunkFailed()",
+  "error ContractLocked()",
+  "error ETHNotAccepted()",
+  "error ExecutionFailed(uint256 commandIndex, bytes message)",
+  "error FromAddressIsNotOwner()",
+  "error InsufficientETH()",
+  "error InsufficientToken()",
+  "error InvalidBips()",
+  "error InvalidCommandType(uint256 commandType)",
+  "error InvalidOwnerERC1155()",
+  "error InvalidOwnerERC721()",
+  "error InvalidPath()",
+  "error InvalidReserves()",
+  "error InvalidSpender()",
+  "error LengthMismatch()",
+  "error SliceOutOfBounds()",
+  "error TransactionDeadlinePassed()",
+  "error UnableToClaim()",
+  "error UnsafeCast()",
+  "error V2InvalidPath()",
+  "error V2TooLittleReceived()",
+  "error V2TooMuchRequested()",
+  "error V3InvalidAmountOut()",
+  "error V3InvalidCaller()",
+  "error V3InvalidSwap()",
+  "error V3TooLittleReceived()",
+  "error V3TooMuchRequested()",
+  "event RewardsSent(uint256 amount)",
+  "function collectRewards(bytes looksRareClaim)",
+  "function execute(bytes commands, bytes[] inputs) payable",
+  "function execute(bytes commands, bytes[] inputs, uint256 deadline) payable",
+  "function onERC1155BatchReceived(address, address, uint256[], uint256[], bytes) pure returns (bytes4)",
+  "function onERC1155Received(address, address, uint256, uint256, bytes) pure returns (bytes4)",
+  "function onERC721Received(address, address, uint256, bytes) pure returns (bytes4)",
+  "function supportsInterface(bytes4 interfaceId) pure returns (bool)",
+  "function uniswapV3SwapCallback(int256 amount0Delta, int256 amount1Delta, bytes data)"
+]
+
 const networksParams = {
   "1": {
     "name": "Ethereum Mainnet",
@@ -444,6 +485,7 @@ return {
   PAIR_ABI,
   FACTORY_ABI,
   ROUTER02_ABI,
+  UNIVERSAL_ROUTER_ABI,
   networksParams,
   defaultGasLimit,
 

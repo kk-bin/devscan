@@ -46,7 +46,7 @@
         "localnm": "file:./local-nm"
     },
     "scripts": {
-        "startpc": "set PORT=8000&& react-app-rewired start",
+        "startpc": "set PORT=8089&& react-app-rewired start",
         "start": "react-app-rewired start",
         "build": "react-app-rewired build",
         "test": "react-app-rewired test",

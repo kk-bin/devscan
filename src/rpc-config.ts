@@ -47,7 +47,7 @@ export const CHAIN_CURRENCY = {
 }
 
 export const CHAIN_RPC = {
-    [CHAIN_MAP.Ethereum]: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+    [CHAIN_MAP.Ethereum]: 'https://rpc.flashbots.net',
     [CHAIN_MAP.Sepolia]: 'https://rpc.sepolia.ethpandaops.io',
     [CHAIN_MAP.BSC]: 'https://bsc-dataseed1.binance.org',
     [CHAIN_MAP.BSC_TEST]: 'https://data-seed-prebsc-1-s1.binance.org:8545',

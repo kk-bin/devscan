@@ -86,20 +86,6 @@ export function createContractWithProvider(
     return new ethers.Contract(address, abi, provider);
 }
 
-const WalletSavedKey = "selectedWallet";
-
-export const getSaveWallet = () => {
-    return window.localStorage.getItem(WalletSavedKey) || "";
-};
-
-export const saveWallet = (wallet: string) => {
-    window.localStorage.setItem(WalletSavedKey, wallet);
-};
-
-export const clearWallet = () => {
-    window.localStorage.removeItem(WalletSavedKey);
-};
-
 export function bigNumberFormat(num: number) {
     if (num > Number.MAX_SAFE_INTEGER || num < Number.MIN_SAFE_INTEGER) {
         if (/e/.test(String(num))) {
@@ -334,4 +320,9 @@ export function timeColor(start, end?) {
       return { color: 'red' };
     }
     
+}
+
+export function calcPercent(part, all, unit = '%') {
+    if (isNaN(part) || isNaN(all) || all == 0) return '-';
+    return (part/all*100).toFixed(2) + unit;
 }

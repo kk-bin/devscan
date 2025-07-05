@@ -5,15 +5,15 @@ import { useStore } from "src/hooks";
 import { Popover, message, Dropdown, Input } from 'antd';
 import CopyToClipBoard from "react-copy-to-clipboard";
 
-import { formatDecimals, getSaveWallet, showWallet } from "src/utils/util";
+import { formatDecimals, showWallet } from "src/utils/util";
 import { MutableRefObject, useRef } from "react";
 import { NETWORK_TYPE, NETWORK_TYPE_TO_WALLET_TYPE, Operation_TEXT, TRANSACTION_STATUS, WALLET_TYPE } from "src/constants";
 import { QuestionCircleOutlined, CopyOutlined, AppstoreOutlined, FundOutlined } from "@ant-design/icons";
 
-
 import s from "./index.module.scss";
 import { ethers } from "ethers";
 import { hexDataLength } from "ethers/lib/utils";
+import { getSaveWallet } from "src/utils/wallet";
 
 const { Search } = Input;
 
@@ -22,6 +22,11 @@ export const homeTabs = [
         TabName: "Home",
         path: '/home',
     },
+
+    {
+        TabName: "Tools",
+        path: '/tools',
+    }
 
 ];
 

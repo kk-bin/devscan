@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Address from "src/components/Address";
 import { formItemLayout } from "src/constants";
-import { formatNumber, formatUTCTime, topic2Short } from "src/utils/util";
+import { calcPercent, formatNumber, formatUTCTime, topic2Short } from "src/utils/util";
 
 export function TxsTable({
   txs, showBlockNumber, timestamp
@@ -143,7 +143,7 @@ export function TxForm({ tx, txReceipt }: {
         <Form.Item label="Gas Limit & Usage by Txn:">
           <Space split={<Divider type="vertical" />}>
             <div>{+gasLimit}</div>
-            <div>{gasUsed && +gasUsed}</div>
+            <div>{gasUsed && +gasUsed} ({calcPercent(gasUsed, gasLimit)})</div>
           </Space>
         </Form.Item>
         <Form.Item label="Gas Fees:">

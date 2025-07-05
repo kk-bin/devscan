@@ -1,17 +1,25 @@
 import { useEffect } from 'react';
 import { observer } from 'mobx-react';
 
-import { saveWallet, clearWallet } from 'src/utils/util';
 import { useStore } from 'src/hooks';
+import { clearWallet, saveWallet } from './utils/wallet';
+import { SubscriptionLike } from 'rxjs'
+
+let subscription: SubscriptionLike;
 
 function Wallet() {
 
-    const { store: { onboard, initProviderConfig, handleAccountChange, handleNetWorkChange } } = useStore();
+    const { store: { onboard, initProviderConfig, handleAccountChange, handleNetWorkChange, handleConnectWallet } } = useStore();
     
     useEffect(() => {
         if (!onboard) return;
+        if (subscription) {
+            subscription.unsubscribe();
+        }
+        console.log('state.subscribe')
         const state = onboard.state.select('wallets');
-        const { unsubscribe } = state.subscribe(([wallet]) => {
+        subscription = state.subscribe(([wallet]) => {
+            console.log('wallet', wallet)
             if (wallet) {
                 const { label, accounts, provider, chains } = wallet;
                 saveWallet(label);
@@ -19,18 +27,14 @@ function Wallet() {
                 handleNetWorkChange(chains);
                 handleAccountChange(accounts);
             } else {
-                clearWallet();
+                // clearWallet();
                 initProviderConfig();
                 handleNetWorkChange([]);
                 handleAccountChange([]);
             }
         });
-        return () => {
-            try {
-                unsubscribe();
-            } catch (e) {}
-        };
-    }, [onboard, initProviderConfig, handleNetWorkChange, handleAccountChange]);
+        handleConnectWallet();
+    }, [onboard]);
 
     return null;
 }

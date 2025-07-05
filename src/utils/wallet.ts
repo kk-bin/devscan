@@ -23,7 +23,6 @@ export const clearWallet = () => {
 export const createOnBoard = () => {
     const onboard = Onboard({
         wallets: [injectedModule(), walletConnectModule({
-            // @ts-ignore
             version: 2,
             projectId: "6c18eb8e9ddf2e90fa20b48c09993067",
         })],

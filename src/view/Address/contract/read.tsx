@@ -24,16 +24,17 @@ export default function ({ functions, contract }: {
 
   return (
     <>
-    <Collapse defaultActiveKey={['1']} onChange={onChange}>
+      <Collapse defaultActiveKey={['1']} onChange={onChange}>
 
-      {_.map(readFunctions, readFunc => {
-        return (
-          <Panel header={readFunc.name} key={readFunc.name}>
-            <ContractFormAndView contract={contract} readFunc={readFunc} />
-          </Panel>
-        )
-      })}
-    </Collapse>
+        {_.map(readFunctions, readFunc => {
+          const sig = ethers.utils.Interface.getSighash(readFunc);
+          return (
+            <Panel header={readFunc.name} key={sig}>
+              <ContractFormAndView contract={contract} readFunc={readFunc} />
+            </Panel>
+          )
+        })}
+      </Collapse>
     </>
   )
 }

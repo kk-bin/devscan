@@ -45,7 +45,6 @@ export default observer(function Home() {
 
   const init = async () => {
     // provider.getTransactionCount()
-    console.log(111111111111)
   }
 
 
